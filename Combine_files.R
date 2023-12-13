@@ -1,6 +1,6 @@
 
 # setwd("C:/Users/UW-User/Desktop/")
-setwd("~/UWyo/kellyn_chipmunks/Run_sequoia") # Sean's working dir
+setwd("~/UWyo/kellyn_chipmunks/Analyses_git/") # Sean's working dir
 library(sequoia)
 library(kinship2)
 library(dplyr)
@@ -51,4 +51,4 @@ in_ped_not_weight <- ped_sexbirth_loci$id[!ped_sexbirth_loci$id %in% weights$ID]
 in_weight_not_ped <- weights$ID[!weights$ID %in% ped_sexbirth_loci$id]
 
 
-write.csv(all_data, file = "chipmunk_loci_etc.csv")
+write.csv(all_data, file = "chipmunk_INFO_seqRes.csv")
