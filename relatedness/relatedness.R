@@ -46,8 +46,8 @@ euthanasia_subset <- euthanasia_data[, c("Chipmunk.ID", "Weight..g.")]
 common_chipmunk_ids <- intersect(rownames(relatedness_matrix), euthanasia_subset$Chipmunk.ID)
 
 # Subset the datasets to include only common individuals
-filtered_euthanasia_data <- filtered_euthanasia_data[filtered_euthanasia_data$Chipmunk.ID %in% common_chipmunk_ids, ]
-filtered_relatedness_matrix <- filtered_relatedness_matrix[common_chipmunk_ids, common_chipmunk_ids]
+filtered_euthanasia_data <- euthanasia_subset[euthanasia_subset$Chipmunk.ID %in% common_chipmunk_ids, ]
+filtered_relatedness_matrix <- relatedness_matrix[common_chipmunk_ids, common_chipmunk_ids]
 filtered_relatedness_matrix <- as.matrix(filtered_relatedness_matrix)
 
 # Create a symmetric matrix with original diagonal values
